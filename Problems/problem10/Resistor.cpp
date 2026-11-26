@@ -7,7 +7,7 @@ void Resistor::set_value(double r)
   if(get_value() < 0){
     throw std::invalid_argument("no");
   } 
-  set_value(r);
+  Component::set_value(r);
 
 }
 
