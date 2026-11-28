@@ -4,7 +4,7 @@
 void Resistor::set_value(double r)
 {
   // TODO
-  if(r <= 0){
+  if(r < 0){
     throw std::invalid_argument("no");
   } 
   Component::set_value(r);
