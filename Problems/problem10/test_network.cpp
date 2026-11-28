@@ -199,15 +199,20 @@ TEST_CASE("Network: Test overriding and dynamic binding", "[network]")
 
 // Uncomment these partial test cases when you are ready to test the dividers.
 
-// TEST_CASE("Network: Test VoltageDivider", "[network]")
-// {
-//   double voltage = 5.0;
-//   const int num = 2;
-//   double res[num] = {200, 400};
-//   VoltageDivider div(voltage, res, num);
+TEST_CASE("Network: Test VoltageDivider", "[network]")
+{
+  double voltage = 5.0;
+  const int num = 2;
+  double res[num] = {200, 400};
+  VoltageDivider div(voltage, res, num);
 
-//   // TODO
-// }
+  // TODO
+
+  REQUIRE(div.get_num_components() == 2);
+  REQUIRE((div.get_loop_current() - 0.0083333) <= THRESHOLD);
+  
+
+}
 
 // TEST_CASE("Network: Test CurrentDivider", "[network]")
 // {
